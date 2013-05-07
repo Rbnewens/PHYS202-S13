@@ -11,3 +11,9 @@ def dipolePotential(x,y,q,d,a=0):
 	xn = (0.5)*d*cos(a+pi); yn = (0.5)*d*sin(a+pi)
 	return pointPotential(x,y,q,xp,yp) + pointPotential(x,y,-q,xn,yn)
 
+def pointField(x,y,q,Xq,Yq):
+	"""takes arrays (x,y), charge q and position (Xq,Yq) and returns a tuple of the electric fild components (Ex, Ey)"""
+	
+	return ((8.98*e**9*q)(x-Xq))/((x-Xq)**2+(y-Yq)**2)**0.5
+	return ((8.98*e**9*q)(y-Yq))/((x-Xq)**2+(y-Yq)**2)**0.5
+
